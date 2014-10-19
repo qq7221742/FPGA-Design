@@ -11,4 +11,4 @@ Not decided yet
 One more thing
 --------------
 
-based on Xlinux environment, beware when you use it
+based on Xlinx environment, beware when you use it
