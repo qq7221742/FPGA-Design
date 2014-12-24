@@ -1,7 +1,7 @@
-module traffic_lights;
+module traffic_lights(clock, mode, red, amber, green);
 
-    reg clock;
-    reg red, amber, green;
+    input clock, mode;
+    output red, amber, green;
 
     parameter on = 1, off = 0, red_tics = 350, amber_tics = 30, green_tics = 200;
 
@@ -11,6 +11,23 @@ module traffic_lights;
     initial red = off;
     initial amber = off;
     initial green = off;
+
+    // change the light frequency from the mode
+
+    if mode == 0:
+        begin
+            red_tics = 350;
+            amber_tics = 30;
+            green_tics = 350;
+        end
+
+    if mode == 1:
+        begin
+            red_tics = 200;
+            amber_tics = 30;
+            green_tics = 200;
+        end
+
 
     alwasys
         begin
